@@ -1,0 +1,245 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+#PCB{
+	text-align: center;
+	color: #ccc;
+	padding: 10px;
+	font-size: 30px;
+	background-color: #ecf0f1;
+	transition: .3s;
+}
+
+
+#details-dados,
+#details,
+#title-PCB {  border: 2px solid transparent; }
+
+#details {
+    text-align: left;
+    color: black;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #ccc;
+    transition: .3s;
+    border-radius: 5px;
+    position: relative;
+    font-weight: 700;
+    font-family: 'Roboto';
+    transition: .3s;
+}
+
+#details-dados:hover,
+#details:hover,
+#title-PCB:hover{
+    border: 2px solid black;
+}
+
+#details-dados {
+    text-align: left;
+    position: relative;
+    color: black;
+    padding: 10px;
+    font-size: 20px;
+    transition: .3s;
+    background: #ccc;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+#details-dados p span.memoria  p {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+div#title-PCB {
+    background: #ddd;
+    border-radius: 5px;
+    color: black;
+    font-family: 'Roboto';
+}
+
+#title-PCB p{
+    color: black;
+    font-size: 35px;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    transition: .3s;
+    text-transform: uppercase;
+}
+
+
+
+#container-PCB {
+    margin-bottom: 20px;
+    box-shadow: 0 0px 15px -2px black;
+}
+
+#estados{
+	text-align: center;
+}
+
+#estados div p.title {
+    background-color: #e67e22;
+    color: #fff;
+    font-size: 20px;
+    transition: .3s;
+    border: 1px solid transparent;
+}
+
+#estados div p:hover {
+    color: #e67e22;
+    background-color: #fff !important;
+    border: 1px solid #e67e22;
+}
+
+#estados div:first-child{ border: none; }
+
+p.Nome{ 
+    color: #fff !important;
+    font-size: 15px !important;
+}
+
+
+p.Nome:hover{ color:black !important; }
+
+p#not-exist{
+    background: rgba(0,0,0,.7);
+    padding: 10px;
+    color: #fff;
+}
+
+
+p#not-exist span{ color: red;}
+
+p#not-exist {
+    margin: 40px auto;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    transition: .3s;
+}
+
+p#not-exist:hover{
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#estados div p{ 
+    cursor: pointer; 
+    border-radius: 5px;
+}
+
+#criacao p{ cursor: unset !important; }
+
+div#signature {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 25px;
+    background: #11171D;
+    color: #fff;
+}
+
+#option {
+    max-width: 50%;
+    padding: 0 20px;
+    margin: 0;
+    max-height: 25px;
+    position: absolute;
+    right: 11px;
+    top: 10px;
+}
+
+#fila-de-processos div p { font-size: 13px !important; }
+
+
+#fila-de-processos div button { 
+    max-width: 20px; 
+    border: unset;
+    padding: 0 5px;
+    margin: 2px 0 2px 5px;
+}
+#fila-de-processos div p i { 
+    font-size: 10px;
+    color: green;
+    padding: 0;
+    text-align: center;
+    margin:0 auto;
+ }
+
+#pronto div p{    
+
+    border-radius: 5px;
+    margin: 5px 0;
+    color: black;
+    background-color: #2ecc71 !important;
+}
+
+
+#execucao div p{
+    background-color: #8e44ad;
+}
+
+#Espera div p{
+    background-color: #2980b9;
+}
+
+#Espera div p:first-child{
+    background-color: red !important;
+}
+
+#details p{
+    margin:0;
+    font-size: 15px; 
+}
+
+span#priority{ color: red; }
+
+p.termino{
+    background-color: #ccc;
+    color: black;
+    border-radius: 5px;
+    margin:5px 0;
+    padding: 0 5px;
+}
+p.terminoPCB{
+    background-color: #ccc;
+    color: black;
+    border-radius: 5px;
+    margin-left: 10px;
+    display: inline-block;
+    padding: 0 5px;
+}
+
+p.removidoManual{
+    background-color: red;
+    margin:2px auto;
+    border-radius: 5px;
+    color: #fff;
+}
+
+#valor { 
+    display: inline-block;
+    max-width: 140px;
+}
+
+#buscar{
+    font-size:15px;
+    max-width: 100px;
+    display: inline-block; 
+}
+
+
+p.infoProcesso {
+    display: inline-block;
+    margin:10px 0;
+    padding: 2px 5px;
+    background-color: black;
+    color: #fff;
+    border-radius: 3px;
+
+}

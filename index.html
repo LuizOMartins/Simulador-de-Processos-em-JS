@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="lib/style.css">
+    <link rel="stylesheet" href="lib/semantic.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+   <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,400,500,700,900" rel="stylesheet">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+    <title>Processos</title>
+</head>
+
+<body>
+    <div id="container-PCB" class="container-fluid animate" data-animate="bounceInDown" data-delay="200">
+        <div class="row">
+            <div id="PCB" class="col-md-12">
+
+                <div id="details" class="col-md-3 animate" data-animate="bounceInLeft" data-delay="800">
+                   <p >Informações dos Processos</p>
+                   <div>
+                    <input type="text" id="valor" class="form-control" placeholder="Insira o PID">
+                    <input type="submit" class="form-control" id="buscar" onclick="imprimirInforProcesso()" style="color: black;" value="Buscar">
+                    <br/>
+                    <p id="name-process">Nome:</p>
+                   <p id="PIDprocesso">PID:</p>
+                   <p id="tamanhoProcesso">Tamanho:</p>
+                   <p id="creation-time">Tempo de Criação:</p>
+                   </div>
+                </div>  
+                <div id="details-dados" class="col-md-3 animate" data-animate="bounceInDown" data-delay="800" >
+                   <p>Memória Usada:<span class="memoria"></span></p>
+                   <p>Processos Abertos:<span id="qtdProcessos"></span></p>
+                    <p id="demo" style="display: inline-block;"></p>
+                    <p id="cronometro" style="display: inline-block;float:right;"><span id="hora">00h</span><span id="minuto">00m</span><span id="segundo">00s</span></p>
+                        <!--<input type="button" value="Volta" onclick="volta();"><br>
+                        <div id="parar"><input type="button" value="Parar" onclick="parar();"></div>
+                        <div id="comeca" style="display:none;"><input type="button" value="Comeca" onclick="tempo(1);"><br></div>
+                        <input type="button" value="Limpa" onclick="limpa();"><br><br>
+                        <div id="voltas"></div> -->
+                    
+                </div>
+                
+                <div id="title-PCB" class="col-md-5 animate" data-animate="bounceInRight" data-delay="800"  style="margin: 0 auto;">
+                    <p>MATRIZ</p>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+
+            <div class="col-md-12">
+                <div id="estados" class="row">
+
+                    <div id="criacao" class="col-md-2" >
+                        <p class="title">Criar Processo</p>
+                        <button class="btn btn-success" onclick="criarProcesso()">Criar Processo!</button>
+                        <br/>
+                        <br/>
+                        <br/>
+                         <p class="title">Finalizar Processo</p>
+                        <button class="btn btn-danger" onclick="finalizaProcesso()">Finalizar TODOS!</button>
+                        <br/>
+                        <br/>
+
+                        <br/>
+                        <button class="btn btn-info" onclick="limparListaTermino()">Limpar Lista Termino</button>
+                    </div>
+                    <div id="pronto" class="col-md-2" >
+                        <p class="title">Pronto</p>
+                        <div></div>
+                    </div>
+                    <div id="execucao" class="col-md-2" >
+                         <p class="title">Execução</p>
+                         <div></div>
+                    </div>
+                    <div id="ultima" class="col-md-4" >
+                        <div id="Espera" class="col-md-6">
+                            <p class="title" >Espera</p>
+                            <div></div>
+                        </div>
+                        <div id="termino" class="col-md-6">
+                            <p class="title">Termino</p>
+                            <div id="PIDfinalizado"></div>
+                        </div>
+                    </div>
+                    <div id="fila-de-processos"  class="col-md-2">
+                            <p class="title">Fila de Processos</p>
+                            <div></div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+<!--         <div id="signature">
+            Simulador de Processos
+        </div>
+ -->
+
+
+<table class="table table-bordered" style="margin-top: 15px;">
+    <thead>
+      <tr>
+        <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PID</font></font></th>
+        <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Memória Utilizada</font></font></th>
+        <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tempo de execução</font></font></th>
+        <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nome do Processo</font></font></th>
+        <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nome do Usuario</font></font></th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+    </tbody>
+</table>
+    
+    <script  src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha256-jDnOKIOq2KNsQZTcBTEnsp76FnfMEttF6AV2DF2fFNE=" crossorigin="anonymous"></script>
+    <script src="lib/semantic.min.js"></script>
+    <script src="js/queue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html
